@@ -16,6 +16,11 @@ function MyVerticallyCenteredModal(props) {
   const dispatch = useDispatch();
   const id = props.id;
   const handleClick = (id) => {
+    if (name === "" || mail === "" || details === "") {
+        alert("Please fill all details !");
+        props.onHide();
+        return false;
+      }
     const payload = {
       id: id,
       name: name,
@@ -24,6 +29,9 @@ function MyVerticallyCenteredModal(props) {
     };
     dispatch(Put_api({ id, payload }));
     props.onHide();
+    setName("");
+    setMail("");
+    setDetails("");
   };
   return (
     <Modal
@@ -41,6 +49,7 @@ function MyVerticallyCenteredModal(props) {
             value={name}
             onChange={(e) => setName(e.target.value)}
           />
+          <br/>
           <input
           style={{margin:"10px"}}
           placeholder="Enter your email"
@@ -48,6 +57,7 @@ function MyVerticallyCenteredModal(props) {
             value={mail}
             onChange={(e) => setMail(e.target.value)}
           />
+          <br/>
           <input
           style={{margin:"10px"}}
           placeholder="Enter your Details"
@@ -55,6 +65,7 @@ function MyVerticallyCenteredModal(props) {
             value={details}
             onChange={(e) => setDetails(e.target.value)}
           />
+          <br/>
           <Button onClick={() => handleClick(id)}>Submit</Button>
         </Modal.Title>
       </Modal.Header>
@@ -86,6 +97,7 @@ export default function DataOutput() {
     <div style={{width:"90%", margin: "auto"}}>
         <div style={{margin: "5px",display: "flex",gap:"1rem"}}>
         <input type="text"
+        placeholder="Search..."
         value={data}
         onChange={(e)=>setData(e.target.value)}
         />
@@ -103,7 +115,7 @@ export default function DataOutput() {
         </thead>
         <tbody>
         {datas
-          .filter((item) => {
+          ?.filter((item) => {
             if (data === "") {
               return item;
             } else if (item.name.toLowerCase().includes(data.toLowerCase())) {

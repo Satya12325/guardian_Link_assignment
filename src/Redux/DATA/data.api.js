@@ -9,7 +9,7 @@ import axios from "axios";
 export const addData = (payload) => (dispatch) => {
     dispatch(post_data_request());
     return axios
-      .post("http://localhost:3000/data", {
+      .post("https://guardian-link-assignment-api.herokuapp.com/data", {
         ...payload,       
       })
       .then((res) => {
@@ -29,7 +29,7 @@ export const addData = (payload) => (dispatch) => {
 export const get_dataapi = (params)=>(dispatch)=>{
     dispatch(get_data_request())
     axios
-    .get("http://localhost:3000/data")
+    .get("https://guardian-link-assignment-api.herokuapp.com/data")
     .then((res)=>{
         console.log(res.data)
         dispatch(get_data_success(res.data))
@@ -48,7 +48,7 @@ export const delete_api = (id)=>(dispatch)=>{
    console.log("id",id)
     dispatch(delete_data_request());
     axios
-    .delete(`http://localhost:3000/data/${id}`)
+    .delete(`https://guardian-link-assignment-api.herokuapp.com/data/${id}`)
     .then((res)=>{
         dispatch(delete_data_success(id))
         console.log(res)
@@ -64,7 +64,7 @@ export const Put_api = ({id,payload})=>(dispatch)=>{
   console.log("id",id)
    dispatch(put_data_request());
    axios
-   .put(`http://localhost:3000/data/${id}`,payload)
+   .put(`https://guardian-link-assignment-api.herokuapp.com/data/${id}`,payload)
    .then((res)=>{
        dispatch(put_data_success(id))
        console.log(res)
