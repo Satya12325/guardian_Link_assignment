@@ -12,8 +12,12 @@ export default function DataInput() {
   const [details, setDetails] = useState("");
 
   const dispatch = useDispatch();
-
+    
   const handleClick = () => {
+    if(name === ""|| mail === ""|| details === ""){
+        alert("Please fill all details !")
+        return false
+    }
     const payload = {
       name: name,
       mail: mail,

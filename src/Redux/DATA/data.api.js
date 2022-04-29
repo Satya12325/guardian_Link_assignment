@@ -23,7 +23,7 @@ export const addData = (payload) => (dispatch) => {
   };
 
 
-
+  // get_dataapi()
 
 
 export const get_dataapi = (params)=>(dispatch)=>{
@@ -41,6 +41,8 @@ export const get_dataapi = (params)=>(dispatch)=>{
     })
 
 }
+
+// get_dataapi();
 
 export const delete_api = (id)=>(dispatch)=>{
    console.log("id",id)

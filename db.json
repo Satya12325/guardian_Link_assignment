@@ -3,8 +3,26 @@
     {
       "name": "Satya",
       "mail": "satya12325@gmail.com",
-      "details": "sfdsfdsf",
-      "id": "8463dfbc-36b9-4c84-955b-6c83b021af02"
+      "details": "full stack web developer",
+      "id": "84d0d72d-8853-4e87-8d95-fb8575b8f866"
+    },
+    {
+      "id": "22326db4-2b95-46de-9499-4044bfaa8fe6",
+      "name": "SATYABRATA DAS",
+      "mail": "satya12325@gmail.com",
+      "details": "Mern"
+    },
+    {
+      "name": "barsha",
+      "mail": "satya12325@gmail.com",
+      "details": "Das",
+      "id": "7b4c4da7-aafd-4a2f-bf26-73a38ac6122f"
+    },
+    {
+      "name": "Utkarsh",
+      "mail": "satya12325@gmail.com",
+      "details": "developer",
+      "id": "0abbcac1-a18b-407b-a155-e063b0526ac4"
     }
   ]
 }
