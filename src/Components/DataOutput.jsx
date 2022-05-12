@@ -113,12 +113,13 @@ export default function DataOutput() {
             <th>Action</th>
           </tr>
         </thead>
+     
         <tbody>
         {datas
           ?.filter((item) => {
             if (data === "") {
               return item;
-            } else if (item.name.toLowerCase().includes(data.toLowerCase())) {
+            } else if (item.name.toLowerCase().split(" ").join("").includes(data.toLowerCase())) {
               return item;
             }
           })
